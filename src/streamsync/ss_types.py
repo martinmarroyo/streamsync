@@ -1,4 +1,10 @@
-from typing import Any, Dict, List, Literal, Optional, Protocol, Tuple, TypedDict
+import sys
+from typing import Any, Dict, List, Literal, Optional, Protocol, Tuple
+# Python versions earlier than 3.12 need typing_extensions.TypedDict
+if sys.version_info.major <= 3 and sys.version_info.minor < 12:
+    from typing_extensions import TypedDict
+else:
+    from typing import TypedDict
 from pydantic import BaseModel
 
 
